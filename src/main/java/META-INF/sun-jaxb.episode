@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.11 
+Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2020.02.17 a las 10:42:45 AM ART 
+
+  -->
+  <bindings xmlns:tns="urn:scienza.com.ar:Consulta_Trazas_UY" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="ar.com.scienza.remote.ws.dto"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_CONSULTA_TRAZAS_UY_Response">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZACONSULTATRAZASUYResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_CONSULTA_TRAZAS_UY">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZACONSULTATRAZASUY"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="urn:scienza.com.ar:Propuesta_Coordinacion" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="ar.com.scienza.remote.ws.dto"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_PRO_COORDINACION_Response">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZAPROCOORDINACIONResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_PRO_COORDINACION">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZAPROCOORDINACION"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="urn:scienza.com.ar:Indice_Pedidos_UY" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="ar.com.scienza.remote.ws.dto"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_IND_PEDIDOS_UY_Response">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZAINDPEDIDOSUYResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_IND_PEDIDOS_UY">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZAINDPEDIDOSUY"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="urn:scienza.com.ar:Busqueda_Dispone" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="ar.com.scienza.remote.ws.dto"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_Busqueda_Dispone_Response">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZABusquedaDisponeResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_Busqueda_Dispone">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZABusquedaDispone"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="urn:scienza.com.ar:Pedidos_Entregas_UY" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="ar.com.scienza.remote.ws.dto"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_PED_ENT_Response_UY">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZAPEDENTResponseUY"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_PED_ENT_UY">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZAPEDENTUY"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="urn:scienza.com.ar:Registro_Usuarios_UY" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="ar.com.scienza.remote.ws.dto"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_REG_USUARIO_UY">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZAREGUSUARIOUY"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_REG_USUARIO_UY_Response">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZAREGUSUARIOUYResponse"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="urn:scienza.com.ar:Confirmacion_Coordinacion" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="ar.com.scienza.remote.ws.dto"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_CONFIR_COORDINACION">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZACONFIRCOORDINACION"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_CONFIR_COORDINACION_Response">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZACONFIRCOORDINACIONResponse"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.scienza.com.uy/MB_BK_SCIENZA_NOTIF_SAP" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="ar.com.scienza.remote.ws.dto"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_NOTIF_SAP">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZANOTIFSAP"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_NOTIF_SAP_Response">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZANOTIFSAPResponse"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.scienza.com.ar/MB_BK_SCIENZA_NOTIF_ENT" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="ar.com.scienza.remote.ws.dto"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_NOTIF_ENT">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZANOTIFENT"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DT_SCIENZA_NOTIF_ENT_Response">
+      <class ref="ar.com.scienza.remote.ws.dto.DTSCIENZANOTIFENTResponse"/>
+    </bindings>
+  </bindings>
+</bindings>

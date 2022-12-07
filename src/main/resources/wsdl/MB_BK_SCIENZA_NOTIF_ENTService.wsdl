@@ -1,0 +1,121 @@
+<wsdl:definitions name="MB_BK_SCIENZA_NOTIF_ENT"
+	targetNamespace="http://www.scienza.com.ar/MB_BK_SCIENZA_NOTIF_ENT" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:p1="http://www.scienza.com.ar/MB_BK_SCIENZA_NOTIF_ENT" 
+>
+  	<wsdl:types>
+	    <xsd:schema 
+			elementFormDefault="qualified" 
+			targetNamespace="http://www.scienza.com.ar/MB_BK_SCIENZA_NOTIF_ENT" 
+			xmlns:tns="http://www.scienza.com.ar/MB_BK_SCIENZA_NOTIF_ENT"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		>
+			<xsd:element name="MT_SCIENZA_NOTIF_ENT" type="tns:DT_SCIENZA_NOTIF_ENT" />
+			<xsd:element name="MT_SCIENZA_NOTIF_ENT_Response" type="tns:DT_SCIENZA_NOTIF_ENT_Response" />
+			
+			<xsd:complexType name="DT_SCIENZA_NOTIF_ENT">
+				<xsd:sequence>
+					<xsd:element name="NRO_PEDIDO" minOccurs="1" maxOccurs="1">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:int">
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="NRO_ENTREGA" minOccurs="1" maxOccurs="1">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:int">
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="DIRECCION_ENTREGA" minOccurs="1" maxOccurs="1">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="DISTRIBUIDOR" minOccurs="1" maxOccurs="1">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="TIPO_VEHICULO" minOccurs="1" maxOccurs="1">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="PATENTE" minOccurs="1" maxOccurs="1">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>		
+					<xsd:element name="AFILIADO_ID" minOccurs="1" maxOccurs="1">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:int">
+								<xsd:minInclusive value="10000000"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="EVENTO_ID" minOccurs="1" maxOccurs="1">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:int">
+								<xsd:enumeration value="1"/> <!-- ENTREGA EN DISTRIBUCION -->
+     							<xsd:enumeration value="2"/> <!-- ENTREGA CERCA DE DESTINO -->
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DT_SCIENZA_NOTIF_ENT_Response">
+				<xsd:sequence>
+					<xsd:element name="RESULTADO" minOccurs="1" maxOccurs="1">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="OK"/>
+     							<xsd:enumeration value="NO_OK"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="MT_SCIENZA_NOTIF_ENT">
+		<wsdl:part element="p1:MT_SCIENZA_NOTIF_ENT" name="parameters" />
+	</wsdl:message>
+	
+	<wsdl:message name="MT_SCIENZA_NOTIF_ENT_Response">
+		<wsdl:part element="p1:MT_SCIENZA_NOTIF_ENT_Response" name="parameters" />
+	</wsdl:message>
+	
+	<wsdl:portType name="MB_BK_SCIENZA_NOTIF_ENT">
+		<wsdl:operation name="MB_BK_SCIENZA_NOTIF_ENT">
+			<wsdl:input message="p1:MT_SCIENZA_NOTIF_ENT" />
+			<wsdl:output message="p1:MT_SCIENZA_NOTIF_ENT_Response" />
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="MB_BK_SCIENZA_NOTIF_ENTBinding" type="p1:MB_BK_SCIENZA_NOTIF_ENT">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="MB_BK_SCIENZA_NOTIF_ENT">
+			<soap:operation soapAction="http://www.scienza.com.ar/MB_BK_SCIENZA_NOTIF_ENT"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:service name="MB_BK_SCIENZA_NOTIF_ENTService">
+		<wsdl:port name="HTTP_Port" binding="p1:MB_BK_SCIENZA_NOTIF_ENTBinding">
+			<soap:address location="http://afiback.scienza.online:8100/api/ws/MB_BK_SCIENZA_NOTIF_ENTService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

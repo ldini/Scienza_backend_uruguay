@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SI_OS_SCIENZA_CONSULTA_TRAZAS_UY" targetNamespace="urn:scienza.com.ar:Consulta_Trazas_UY" xmlns:p1="urn:scienza.com.ar:Consulta_Trazas_UY" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:documentation />
+    <wsp:UsingPolicy wsdl:required="true" />
+    <wsp:Policy wsu:Id="OP_SI_OS_SCIENZA_CONSULTA_TRAZAS_UY" />
+    <wsdl:types>
+        <xsd:schema targetNamespace="urn:scienza.com.ar:Consulta_Trazas_UY" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:scienza.com.ar:Consulta_Trazas_UY">
+            <xsd:element name="MT_SCIENZA_CONSULTA_TRAZAS_UY" type="DT_SCIENZA_CONSULTA_TRAZAS_UY" />
+            <xsd:element name="MT_SCIENZA_CONSULTA_TRAZAS_UY_Response" type="DT_SCIENZA_CONSULTA_TRAZAS_UY_Response" />
+            <xsd:complexType name="DT_SCIENZA_CONSULTA_TRAZAS_UY">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">87f4a9a8fcd611e99cd5000000646c02</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="CODIGO_TRAZABILIDAD" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DT_SCIENZA_CONSULTA_TRAZAS_UY_Response">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">acdae771fcd611e9bbc6000000646c02</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="STATUS" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">fdb3e7a4fcd711e9a6c400090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="DATOS" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">fdb3e7aafcd711e9838400090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="PRODUCTO" type="xsd:string" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">fdb3e7a5fcd711e9a96e00090ffe0001</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element name="LABORATORIO" type="xsd:string" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">fdb3e7a6fcd711e98e6500090ffe0001</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element name="LOTE" type="xsd:string" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">fdb3e7a7fcd711e9acfe00090ffe0001</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element name="VENCIMIENTO" type="xsd:string" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">fdb3e7a8fcd711e999eb00090ffe0001</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element name="PAIS_ORIGEN" type="xsd:string" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">fdb3e7a9fcd711e9992b00090ffe0001</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element name="INFO_ORIGEN" minOccurs="0">
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="COMPROBANTE" type="xsd:string" minOccurs="0" />
+                                            <xsd:element name="FECHA_HORA" type="xsd:string" minOccurs="0" />
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="INFO_DESTINO" minOccurs="0">
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="DESTINO" type="xsd:string" minOccurs="0" />
+                                            <xsd:element name="NRO_PEDIDO" type="xsd:string" minOccurs="0" />
+                                            <xsd:element name="REMITO" type="xsd:string" minOccurs="0" />
+                                            <xsd:element name="FECHA_ENTREGA" type="xsd:string" minOccurs="0" />
+                                            <xsd:element name="CLIENTE" type="xsd:string" minOccurs="0" />
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="MT_SCIENZA_CONSULTA_TRAZAS_UY">
+        <wsdl:documentation />
+        <wsdl:part name="MT_SCIENZA_CONSULTA_TRAZAS_UY" element="p1:MT_SCIENZA_CONSULTA_TRAZAS_UY" />
+    </wsdl:message>
+    <wsdl:message name="MT_SCIENZA_CONSULTA_TRAZAS_UY_Response">
+        <wsdl:documentation />
+        <wsdl:part name="MT_SCIENZA_CONSULTA_TRAZAS_UY_Response" element="p1:MT_SCIENZA_CONSULTA_TRAZAS_UY_Response" />
+    </wsdl:message>
+    <wsdl:portType name="SI_OS_SCIENZA_CONSULTA_TRAZAS_UY">
+        <wsdl:documentation />
+        <wsdl:operation name="SI_OS_SCIENZA_CONSULTA_TRAZAS_UY">
+            <wsdl:documentation />
+            <wsp:Policy>
+                <wsp:PolicyReference URI="#OP_SI_OS_SCIENZA_CONSULTA_TRAZAS_UY" />
+            </wsp:Policy>
+            <wsdl:input message="p1:MT_SCIENZA_CONSULTA_TRAZAS_UY" />
+            <wsdl:output message="p1:MT_SCIENZA_CONSULTA_TRAZAS_UY_Response" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SI_OS_SCIENZA_CONSULTA_TRAZAS_UYBinding" type="p1:SI_OS_SCIENZA_CONSULTA_TRAZAS_UY">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+        <wsdl:operation name="SI_OS_SCIENZA_CONSULTA_TRAZAS_UY">
+            <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+            <wsdl:input>
+                <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SI_OS_SCIENZA_CONSULTA_TRAZAS_UYService">
+        <wsdl:port name="HTTP_Port" binding="p1:SI_OS_SCIENZA_CONSULTA_TRAZAS_UYBinding">
+            <soap:address location="http://mdf-s24.scienza.com.ar:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_APP_Mobile&amp;receiverParty=&amp;receiverService=&amp;interface=SI_OS_SCIENZA_CONSULTA_TRAZAS_UY&amp;interfaceNamespace=urn%3Ascienza.com.ar%3AConsulta_Trazas_UY" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+        </wsdl:port>
+        <wsdl:port name="HTTPS_Port" binding="p1:SI_OS_SCIENZA_CONSULTA_TRAZAS_UYBinding">
+            <soap:address location="https://mdf-s24.scienza.com.ar:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_APP_Mobile&amp;receiverParty=&amp;receiverService=&amp;interface=SI_OS_SCIENZA_CONSULTA_TRAZAS_UY&amp;interfaceNamespace=urn%3Ascienza.com.ar%3AConsulta_Trazas_UY" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

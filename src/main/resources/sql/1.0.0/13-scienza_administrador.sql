@@ -1,0 +1,2 @@
+INSERT INTO scienza.administrador (id, fecha_delete, fecha_insert, fecha_update, version, nombre, apellido, telefono, email, operativo, usuario_id) VALUES (1, null, '2018-10-16 11:11:28', '2019-08-15 14:38:36', 2664, 'Gastón', 'Mancini', 1150509999, 'gmancini@fusap.com.ar', true, 1);
+INSERT INTO scienza.administrador (id, fecha_delete, fecha_insert, fecha_update, version, nombre, apellido, telefono, email, operativo, usuario_id) VALUES (2, null, '2018-10-16 11:11:28', '2019-07-24 15:57:40', 28, 'Cristian', 'Pirola', 1155547890, 'gpirola@scienza.com.ar', true, 2);

@@ -1,0 +1,766 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>Scienza-uy-backend</groupId>
+	<artifactId>Scienza-uy-backend</artifactId>
+	<version>1.1.0</version>
+	<packaging>jar</packaging>
+	<name>Scienza-uy-backend</name>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+	</parent>
+
+	<properties>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>			
+			<plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+			    <artifactId>maven-jaxb2-plugin</artifactId>
+			    <version>0.13.1</version>
+<!-- 			    <executions>
+ 			        <execution>
+ 			            <goals>
+ 			                <goal>generate</goal>
+ 			            </goals>
+ 			        </execution>
+ 			    </executions>-->
+                <configuration>
+					<schemaDirectory>src/main/resources/wsdl</schemaDirectory>
+					<schemaIncludes>
+						<include>*.wsdl</include>
+					</schemaIncludes>
+					<generatePackage>ar.com.scienza.remote.ws.dto</generatePackage>
+					<generateDirectory>src/main/java</generateDirectory>
+					<strict>true</strict>
+                </configuration>
+            </plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+
+	<profiles>
+	    <profile>
+			<id>local-development</id>
+			<properties>
+			    
+				<!-- *********************************************************** -->
+				<!-- 						SERVER 								 -->
+				<!-- *********************************************************** -->
+			    
+			    <server.protocol>http</server.protocol>
+				<server.host>localhost</server.host>
+			    <server.port>8100</server.port>
+			    <server.appId>A9F67BF3-5B84-454E-B697-C006DF299F3E</server.appId>
+			    <server.web>http://localhost:8080</server.web>
+
+				<googlemaps.apikey></googlemaps.apikey>
+			    
+			    <onesignal.authorization>NDIyYWY2MTEtYjM4Yi00NWY3LTg3ZTAtZDhmND</onesignal.authorization>
+			    <onesignal.appId>8655056d-da67-48a0-9890-c64449549d64</onesignal.appId>
+			    
+			    <pubnub.publishKey>pub-c-667fc71d-e5dc-4719-94b7-95d33bad1ccd</pubnub.publishKey>
+			    <pubnub.subscribeKey>sub-c-a2073d52-f26c-11e8-babf-1e3d8cb2a384</pubnub.subscribeKey>
+			    <pubnub.uuid>99999999-9999-9999-9999-999999999999</pubnub.uuid>
+
+				<!-- *********************************************************** -->
+				<!-- 					HIBERNATE.CFG.XML						 -->
+				<!-- *********************************************************** -->
+
+<!--				<connection.driver_class>com.mysql.jdbc.Driver</connection.driver_class>-->
+<!--				<connection.url>jdbc:mysql://localhost:3306/scienza_uy?useSSL=false&amp;serverTimezone=UTC</connection.url>-->
+<!--				<connection.username>root</connection.username>-->
+<!--				<connection.password>motorola123</connection.password>-->
+<!--				<connection.pool_size>1</connection.pool_size>-->
+
+<!--				<connection.hibernate_dialect>org.hibernate.dialect.MySQL5Dialect</connection.hibernate_dialect>-->
+<!--				<connection.naming_strategy>org.hibernate.cfg.ImprovedNamingStrategy</connection.naming_strategy>-->
+
+<!--				<connection.current_session_context_class>thread</connection.current_session_context_class>-->
+<!--				<connection.cache.provider_class>org.hibernate.cache.NoCacheProvider</connection.cache.provider_class>-->
+<!--				<connection.show_sql>false</connection.show_sql>-->
+<!--				<connection.hbm2ddl.auto>update</connection.hbm2ddl.auto>-->
+
+
+				<connection.driver_class>com.mysql.jdbc.Driver</connection.driver_class>
+				<connection.url>jdbc:mysql://srvdbscienzauy.cpnhk7ccqgsj.us-east-2.rds.amazonaws.com:3306/scienza_uy?noAccessToProcedureBodies=true&amp;useSSL=false&amp;charset=utf8mb4&amp;collation=utf8mb4_unicode_ci</connection.url>
+				<connection.username>admin</connection.username>
+				<connection.password>cFR2DrTpDD7mhwzwjh4tWvst</connection.password>
+				<connection.pool_size>500</connection.pool_size>
+
+				<connection.hibernate_dialect>org.hibernate.dialect.MySQL5Dialect</connection.hibernate_dialect>
+				<connection.naming_strategy>org.hibernate.cfg.ImprovedNamingStrategy</connection.naming_strategy>
+
+				<connection.current_session_context_class>thread</connection.current_session_context_class>
+				<connection.cache.provider_class>org.hibernate.cache.NoCacheProvider</connection.cache.provider_class>
+				<connection.show_sql>false</connection.show_sql>
+				<connection.hbm2ddl.auto>validate</connection.hbm2ddl.auto>
+
+				<!-- *********************************************************** -->
+				<!-- 						PROPERTIES 							 -->
+				<!-- *********************************************************** -->
+
+		   		<location.files>c:/temp/scienza-backend/files/</location.files>
+				<path.smallImage>images/small/</path.smallImage>
+				<path.mediumImage>images/medium/</path.mediumImage>
+				<path.originalImage>images/original/</path.originalImage>
+				<path.pdf>pdf/</path.pdf>			
+				<path.docs>docs/</path.docs>
+				<path.temporal>tmp/</path.temporal>
+				
+				<!-- *********************************************************** -->
+				<!-- 						   SAP 								 -->
+				<!-- *********************************************************** -->
+				
+				<SI_OS_SCIENZA.USER>SZA_MOBILE</SI_OS_SCIENZA.USER>
+				<SI_OS_SCIENZA.PASSWORD>SzaMobileQ2017</SI_OS_SCIENZA.PASSWORD>
+				<SI_OS_SCIENZA.URL.REG_USUARIO>http://localhost:8300/api/ws/SI_OS_SCIENZA_REG_USUARIO</SI_OS_SCIENZA.URL.REG_USUARIO>
+				<SI_OS_SCIENZA.URL.IND_PEDIDOS>http://localhost:8300/api/ws/SI_OS_SCIENZA_IND_PEDIDOS</SI_OS_SCIENZA.URL.IND_PEDIDOS>
+				<SI_OS_SCIENZA.URL.PED_ENT>http://localhost:8300/api/ws/SI_OS_SCIENZA_PED_ENT</SI_OS_SCIENZA.URL.PED_ENT>
+				<SI_OS_SCIENZA.URL.PROP_COORDINACION>http://localhost:8300/api/ws/SI_OS_SCIENZA_PROP_COORDINACION</SI_OS_SCIENZA.URL.PROP_COORDINACION>
+				<SI_OS_SCIENZA.URL.CONF_COORDINACION>http://localhost:8300/api/ws/SI_OS_SCIENZA_CONFIR_COORDINACION</SI_OS_SCIENZA.URL.CONF_COORDINACION>
+				<SI_OS_SCIENZA.URL.TRAZA>http://localhost:8300/api/ws/SI_OS_SCIENZA_CONSULTA_TRAZAS_MOB</SI_OS_SCIENZA.URL.TRAZA>
+				<SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>http://localhost:8300/api/ws/SI_OS_SCIENZA_Busqueda_Dispone</SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>
+
+				<!-- *********************************************************** -->
+				<!-- 						EMAIL SENDER						 -->
+				<!-- *********************************************************** -->
+
+
+<!--				<email.smtp>smtp.gmail.com</email.smtp>-->
+<!--				<email.port>587</email.port>-->
+<!--				<email.alias>SCIENZA M\u00D3</email.alias>-->
+<!--				<email.username>leandro.david.dini@gmail.com</email.username>-->
+<!--				<email.password>xtqjgphywircgxjx</email.password>-->
+
+<!--				<email.smtp>smtp.gmail.com</email.smtp>-->
+<!--				<email.port>587</email.port>-->
+<!--				<email.alias>SCIENZA URUGUAY</email.alias>-->
+<!--				<email.username>scienzadevelopment33@gmail.com</email.username>-->
+<!--				<email.password>654321fsp</email.password>-->
+
+<!--				<email.smtp>smtp.gmail.com</email.smtp>-->
+<!--				<email.port>587</email.port>-->
+<!--				<email.alias>SCIENZA M\u00D3VIL</email.alias>-->
+<!--				<email.username>afiliados@scienza.com.ar</email.username>-->
+<!--				<email.password>Scienza2018</email.password>-->
+
+<!--				produ-->
+					<email.smtp>smtp.gmail.com</email.smtp>
+					<email.port>587</email.port>
+					<email.alias>SCIENZA MOBILE</email.alias>
+					<email.username>scienzamovil@scienza.com.uy</email.username>
+					<email.password>scienzamoviluy</email.password>
+					<mail.environment>https://app.scienza.com.uy/Scienza-uy/login</mail.environment>
+
+<!--				<email.smtp>smtp.gmail.com</email.smtp>-->
+<!--				<email.port>587</email.port>-->
+<!--				<email.alias>SCIENZA URUGUAY</email.alias>-->
+<!--				<email.username>scienzadevelopment33@gmail.com</email.username>-->
+<!--				<email.password>654321fsp</email.password>-->
+
+
+<!--				<email.smtp>smtp.gmail.com</email.smtp>-->
+<!--				<email.port>587</email.port>-->
+<!--				<email.alias>SCIENZA URUGUAY</email.alias>-->
+<!--				<email.username>scienzadevelopment33@gmail.com</email.username>-->
+<!--				<email.password>123456a&amp;/</email.password>-->
+
+<!--					<mail.environment>https://afiwebuy.scienza.com.ar/Scienza-uy/login</mail.environment>-->
+
+
+			</properties>
+		</profile>
+		<profile>
+			<id>remote-development</id>
+			<properties>
+			    
+				<!-- *********************************************************** -->
+				<!-- 						SERVER 								 -->
+				<!-- *********************************************************** -->
+			    
+			    <server.protocol>http</server.protocol>
+				<server.host>localhost</server.host>
+			    <server.port>8200</server.port>
+			    <server.appId>A9F67BF3-5B84-454E-B697-C006DF299F3E</server.appId>
+			    <server.web>https://server.fusap.com.ar</server.web>
+			    
+			    <googlemaps.apikey></googlemaps.apikey>
+			    
+			    <onesignal.authorization>NDIyYWY2MTEtYjM4Yi00NWY3LTg3ZTAtZDhmND</onesignal.authorization>
+			    <onesignal.appId>8655056d-da67-48a0-9890-c64449549d64</onesignal.appId>
+			    
+			    <pubnub.publishKey>pub-c-667fc71d-e5dc-4719-94b7-95d33bad1ccd</pubnub.publishKey>
+			    <pubnub.subscribeKey>sub-c-a2073d52-f26c-11e8-babf-1e3d8cb2a384</pubnub.subscribeKey>
+			    <pubnub.uuid>99999999-9999-9999-9999-999999999999</pubnub.uuid>
+
+				<!-- *********************************************************** -->
+				<!-- 					HIBERNATE.CFG.XML						 -->
+				<!-- *********************************************************** -->
+
+				<connection.driver_class>com.mysql.jdbc.Driver</connection.driver_class>
+				<connection.url>jdbc:mysql://server.fusap.com.ar:3306/scienza_uy?noAccessToProcedureBodies=true&amp;charset=utf8mb4&amp;collation=utf8mb4_unicode_ci</connection.url>
+				<connection.username>root</connection.username>
+				<connection.password>Fsp.Desa.423</connection.password>
+				<connection.pool_size>1</connection.pool_size>
+				
+				<connection.hibernate_dialect>org.hibernate.dialect.MySQL5Dialect</connection.hibernate_dialect>
+				<connection.naming_strategy>org.hibernate.cfg.ImprovedNamingStrategy</connection.naming_strategy>
+
+				<connection.current_session_context_class>thread</connection.current_session_context_class>
+				<connection.cache.provider_class>org.hibernate.cache.NoCacheProvider</connection.cache.provider_class>
+				<connection.show_sql>false</connection.show_sql>
+				<connection.hbm2ddl.auto>validate</connection.hbm2ddl.auto>
+
+				<!-- *********************************************************** -->
+				<!-- 						PROPERTIES 							 -->
+				<!-- *********************************************************** -->
+
+		   		<location.files>c:/temp/scienza-backend/files/</location.files>
+				<path.smallImage>images/small/</path.smallImage>
+				<path.mediumImage>images/medium/</path.mediumImage>
+				<path.originalImage>images/original/</path.originalImage>
+				<path.pdf>pdf/</path.pdf>			
+				<path.docs>docs/</path.docs>
+				<path.temporal>tmp/</path.temporal>
+				
+				<!-- *********************************************************** -->
+				<!-- 						   SAP 								 -->
+				<!-- *********************************************************** -->
+
+				<SI_OS_SCIENZA.USER>SZA_MOBILE</SI_OS_SCIENZA.USER>
+				<SI_OS_SCIENZA.PASSWORD>SzaMobileQ2017</SI_OS_SCIENZA.PASSWORD>
+				<SI_OS_SCIENZA.URL.REG_USUARIO>http://localhost:8300/api/ws/SI_OS_SCIENZA_REG_USUARIO</SI_OS_SCIENZA.URL.REG_USUARIO>
+				<SI_OS_SCIENZA.URL.IND_PEDIDOS>http://localhost:8300/api/ws/SI_OS_SCIENZA_IND_PEDIDOS</SI_OS_SCIENZA.URL.IND_PEDIDOS>
+				<SI_OS_SCIENZA.URL.PED_ENT>http://localhost:8300/api/ws/SI_OS_SCIENZA_PED_ENT</SI_OS_SCIENZA.URL.PED_ENT>
+				<SI_OS_SCIENZA.URL.PROP_COORDINACION>http://localhost:8300/api/ws/SI_OS_SCIENZA_PROP_COORDINACION</SI_OS_SCIENZA.URL.PROP_COORDINACION>
+				<SI_OS_SCIENZA.URL.CONF_COORDINACION>http://localhost:8300/api/ws/SI_OS_SCIENZA_CONFIR_COORDINACION</SI_OS_SCIENZA.URL.CONF_COORDINACION>
+				<SI_OS_SCIENZA.URL.TRAZA>http://localhost:8300/api/ws/SI_OS_SCIENZA_CONSULTA_TRAZAS_MOB</SI_OS_SCIENZA.URL.TRAZA>
+				<SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>http://localhost:8300/api/ws/SI_OS_SCIENZA_Busqueda_Dispone</SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>
+
+				<!-- *********************************************************** -->
+				<!-- 						EMAIL SENDER						 -->
+				<!-- *********************************************************** -->
+
+				<email.smtp>smtp.gmail.com</email.smtp>
+				<email.port>587</email.port>
+				<email.alias>SCIENZA URUGUAY</email.alias>
+				<email.username>scienzadevelopment33@gmail.com</email.username>
+				<email.password>654321fsp</email.password>
+
+
+			</properties>
+		</profile>
+		<profile>
+			<id>development</id>
+			<properties>
+			    
+				<!-- *********************************************************** -->
+				<!-- 						SERVER 								 -->
+				<!-- *********************************************************** -->
+
+				<server.protocol>http</server.protocol>
+				<server.host>backend.scienzauy.fusap.com.ar</server.host>
+				<server.port>8800</server.port>
+				<server.appId>A9F67BF3-5B84-454E-B697-C006DF299F3E</server.appId>
+				<server.web>backend.scienzauy.fusap.com.ar</server.web>
+
+				<googlemaps.apikey></googlemaps.apikey>
+			    
+			    <onesignal.authorization>NDIyYWY2MTEtYjM4Yi00NWY3LTg3ZTAtZDhmND</onesignal.authorization>
+			    <onesignal.appId>8655056d-da67-48a0-9890-c64449549d64</onesignal.appId>
+			    
+			    <pubnub.publishKey>pub-c-667fc71d-e5dc-4719-94b7-95d33bad1ccd</pubnub.publishKey>
+			    <pubnub.subscribeKey>sub-c-a2073d52-f26c-11e8-babf-1e3d8cb2a384</pubnub.subscribeKey>
+			    <pubnub.uuid>99999999-9999-9999-9999-999999999999</pubnub.uuid>
+
+				<!-- *********************************************************** -->
+				<!-- 					HIBERNATE.CFG.XML						 -->
+				<!-- *********************************************************** -->
+
+				<connection.driver_class>com.mysql.jdbc.Driver</connection.driver_class>
+				<connection.url>jdbc:mysql://server.fusap.com.ar:3306/scienza_uy?noAccessToProcedureBodies=true&amp;charset=utf8mb4&amp;collation=utf8mb4_unicode_ci</connection.url>
+				<connection.username>root</connection.username>
+				<connection.password>Fsp.Desa.423</connection.password>
+				<connection.pool_size>1</connection.pool_size>
+				
+				<connection.hibernate_dialect>org.hibernate.dialect.MySQL5Dialect</connection.hibernate_dialect>
+				<connection.naming_strategy>org.hibernate.cfg.ImprovedNamingStrategy</connection.naming_strategy>
+
+				<connection.current_session_context_class>thread</connection.current_session_context_class>
+				<connection.cache.provider_class>org.hibernate.cache.NoCacheProvider</connection.cache.provider_class>
+				<connection.show_sql>false</connection.show_sql>
+				<connection.hbm2ddl.auto>validate</connection.hbm2ddl.auto>				
+
+				<!-- *********************************************************** -->
+				<!-- 						PROPERTIES 							 -->
+				<!-- *********************************************************** -->
+
+				<location.files>/usr/local/files/scienza/</location.files>
+				<path.smallImage>images/small/</path.smallImage>
+				<path.mediumImage>images/medium/</path.mediumImage>
+				<path.originalImage>images/original/</path.originalImage>
+				<path.pdf>pdf/</path.pdf>				
+				<path.docs>docs/</path.docs>
+				<path.temporal>tmp/</path.temporal>
+				
+				<!-- *********************************************************** -->
+				<!-- 						   SAP 								 -->
+				<!-- *********************************************************** -->
+				
+				<SI_OS_SCIENZA.USER>SZA_MOBILE</SI_OS_SCIENZA.USER>
+				<SI_OS_SCIENZA.PASSWORD>SzaMobileQ2017</SI_OS_SCIENZA.PASSWORD>
+				<SI_OS_SCIENZA.URL.REG_USUARIO>http://localhost:8900/api/ws/SI_OS_SCIENZA_REG_USUARIO_UY</SI_OS_SCIENZA.URL.REG_USUARIO>
+				<SI_OS_SCIENZA.URL.IND_PEDIDOS>http://localhost:8900/api/ws/SI_OS_SCIENZA_IND_PEDIDOS_UY</SI_OS_SCIENZA.URL.IND_PEDIDOS>
+				<SI_OS_SCIENZA.URL.PED_ENT>http://localhost:8900/api/ws/SI_OS_SCIENZA_PED_ENT_UY</SI_OS_SCIENZA.URL.PED_ENT>
+				<SI_OS_SCIENZA.URL.PROP_COORDINACION>http://localhost:8900/api/ws/SI_OS_SCIENZA_PROP_COORDINACION</SI_OS_SCIENZA.URL.PROP_COORDINACION>
+				<SI_OS_SCIENZA.URL.CONF_COORDINACION>http://localhost:8900/api/ws/SI_OS_SCIENZA_CONFIR_COORDINACION</SI_OS_SCIENZA.URL.CONF_COORDINACION>
+				<SI_OS_SCIENZA.URL.TRAZA>http://localhost:8900/api/ws/SI_OS_SCIENZA_CONSULTA_TRAZAS_UYService</SI_OS_SCIENZA.URL.TRAZA>
+				<SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>http://localhost:8900/api/ws/SI_OS_SCIENZA_Busqueda_Dispone</SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>
+
+				<!-- *********************************************************** -->
+				<!-- 						EMAIL SENDER						 -->
+				<!-- *********************************************************** -->
+
+				<email.smtp>smtp.gmail.com</email.smtp>
+				<email.port>587</email.port>
+				<email.alias>SCIENZA URUGUAY</email.alias>
+				<email.username>scienzadevelopment33@gmail.com</email.username>
+				<email.password>654321fsp</email.password>
+
+
+			</properties>
+		</profile>
+		<profile>
+			<id>testing</id>
+			<properties>
+
+				<!-- *********************************************************** -->
+				<!-- 						SERVER 								 -->
+				<!-- *********************************************************** -->
+			    
+			    <server.protocol>http</server.protocol>
+			    <server.host>afiwebuy.scienza.com.ar</server.host>
+			    <server.port>8100</server.port>
+			    <server.appId>BCC67F16-98AE-4B77-A636-B24A43237C06</server.appId>
+			    <server.web>https://afiwebuy.scienza.com.ar</server.web>
+			    
+			    <googlemaps.apikey></googlemaps.apikey>
+			    
+			    <onesignal.authorization>NmNkNzU3MmEtMzk2NC00Y2JmLTk2ODctY2Q5MzkzMmEyNWI4</onesignal.authorization>
+			    <onesignal.appId>f66e329b-eaf0-466a-aa9d-68e6715d932c</onesignal.appId>
+			    
+			    <pubnub.publishKey>pub-c-35f1c89c-fa5e-4bcf-ab47-6c470b6e3dd1</pubnub.publishKey>
+			    <pubnub.subscribeKey>sub-c-70141d7c-f754-11e9-be22-ea7c5aada356</pubnub.subscribeKey>
+			    <pubnub.uuid>99999999-9999-9999-9999-999999999999</pubnub.uuid>
+			    
+				<!-- *********************************************************** -->
+				<!-- 					HIBERNATE.CFG.XML						 -->
+				<!-- *********************************************************** -->
+
+				<connection.driver_class>com.mysql.jdbc.Driver</connection.driver_class>
+				<connection.url>jdbc:mysql://localhost:3306/scienza_uy?noAccessToProcedureBodies=true&amp;charset=utf8mb4&amp;collation=utf8mb4_unicode_ci</connection.url>
+				<connection.username>root</connection.username>
+				<connection.password>mobile</connection.password>
+				<connection.pool_size>2</connection.pool_size>
+				
+				<connection.hibernate_dialect>org.hibernate.dialect.MySQL5Dialect</connection.hibernate_dialect>
+				<connection.naming_strategy>org.hibernate.cfg.ImprovedNamingStrategy</connection.naming_strategy>
+
+				<connection.current_session_context_class>thread</connection.current_session_context_class>
+				<connection.cache.provider_class>org.hibernate.cache.NoCacheProvider</connection.cache.provider_class>
+				<connection.show_sql>false</connection.show_sql>
+				<connection.hbm2ddl.auto>validate</connection.hbm2ddl.auto>
+
+				<!-- *********************************************************** -->
+				<!-- 						PROPERTIES 							 -->
+				<!-- *********************************************************** -->
+
+				<location.files>/usr/local/apps/scienza/files/</location.files>
+				<path.smallImage>images/small/</path.smallImage>
+				<path.mediumImage>images/medium/</path.mediumImage>
+				<path.originalImage>images/original/</path.originalImage>
+				<path.pdf>pdf/</path.pdf>				
+				<path.docs>docs/</path.docs>
+				<path.temporal>tmp/</path.temporal>
+				
+				<!-- *********************************************************** -->
+				<!-- 						   SAP 								 -->
+				<!-- *********************************************************** -->
+				
+				<SI_OS_SCIENZA.USER>SZA_MOBILEUY</SI_OS_SCIENZA.USER>
+				<SI_OS_SCIENZA.PASSWORD>SzaMobileQ2020</SI_OS_SCIENZA.PASSWORD>
+				<SI_OS_SCIENZA.URL.REG_USUARIO>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.REG_USUARIO>
+				<SI_OS_SCIENZA.URL.IND_PEDIDOS>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.IND_PEDIDOS>
+				<SI_OS_SCIENZA.URL.PED_ENT>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.PED_ENT>
+				<SI_OS_SCIENZA.URL.PROP_COORDINACION>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.PROP_COORDINACION>
+				<SI_OS_SCIENZA.URL.CONF_COORDINACION>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.CONF_COORDINACION>
+				<SI_OS_SCIENZA.URL.TRAZA>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.TRAZA>
+				<SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>
+
+				<!-- *********************************************************** -->
+				<!-- 						EMAIL SENDER						 -->
+				<!-- *********************************************************** -->
+
+				<email.smtp>smtp.gmail.com</email.smtp>
+				<email.port>587</email.port>
+				<email.alias>SCIENZA URUGUAY</email.alias>
+				<email.username>scienzadevelopment33@gmail.com</email.username>
+				<email.password>654321fsp</email.password>
+
+
+				<mail.environment>https://afiwebuy.scienza.com.ar/Scienza-uy/login</mail.environment>
+
+			</properties>
+		</profile>
+		<profile>
+			<id>remote-testing</id>
+			<properties>
+
+				<!-- *********************************************************** -->
+				<!-- 						SERVER 								 -->
+				<!-- *********************************************************** -->
+
+				<server.protocol>http</server.protocol>
+				<server.host>localhost</server.host>
+				<server.port>8100</server.port>
+				<server.appId>BCC67F16-98AE-4B77-A636-B24A43237C06</server.appId>
+				<server.web>https://afiweb.scienza.com.ar</server.web>
+
+				<googlemaps.apikey></googlemaps.apikey>
+
+				<onesignal.authorization>ZGUzMWU2NzItYjJhNS00NjM0LWJjMDQtOGU4ZTY2MzZkOGNi</onesignal.authorization>
+				<onesignal.appId>5c209306-42b8-4e51-857e-3a7596848310</onesignal.appId>
+
+				<pubnub.publishKey>pub-c-f32abefa-90e6-4d6c-8498-61d9eb4f3d3e</pubnub.publishKey>
+				<pubnub.subscribeKey>sub-c-47276f46-0235-11e9-a39c-e60c31199fb2</pubnub.subscribeKey>
+				<pubnub.uuid>99999999-9999-9999-9999-999999999999</pubnub.uuid>
+
+				<!-- *********************************************************** -->
+				<!-- 					HIBERNATE.CFG.XML						 -->
+				<!-- *********************************************************** -->
+
+				<connection.driver_class>com.mysql.jdbc.Driver</connection.driver_class>
+				<connection.url>jdbc:mysql://192.168.1.24:3306/scienza_uy?noAccessToProcedureBodies=true&amp;charset=utf8mb4&amp;collation=utf8mb4_unicode_ci</connection.url>
+				<connection.username>root</connection.username>
+				<connection.password>mobile</connection.password>
+				<connection.pool_size>2</connection.pool_size>
+
+				<connection.hibernate_dialect>org.hibernate.dialect.MySQL5Dialect</connection.hibernate_dialect>
+				<connection.naming_strategy>org.hibernate.cfg.ImprovedNamingStrategy</connection.naming_strategy>
+
+				<connection.current_session_context_class>thread</connection.current_session_context_class>
+				<connection.cache.provider_class>org.hibernate.cache.NoCacheProvider</connection.cache.provider_class>
+				<connection.show_sql>false</connection.show_sql>
+				<connection.hbm2ddl.auto>validate</connection.hbm2ddl.auto>
+
+				<!-- *********************************************************** -->
+				<!-- 						PROPERTIES 							 -->
+				<!-- *********************************************************** -->
+
+				<location.files>/usr/local/apps/scienza/files/</location.files>
+				<path.smallImage>images/small/</path.smallImage>
+				<path.mediumImage>images/medium/</path.mediumImage>
+				<path.originalImage>images/original/</path.originalImage>
+				<path.pdf>pdf/</path.pdf>
+				<path.docs>docs/</path.docs>
+				<path.temporal>tmp/</path.temporal>
+
+				<!-- *********************************************************** -->
+				<!-- 						   SAP 								 -->
+				<!-- *********************************************************** -->
+
+				<SI_OS_SCIENZA.USER>SZA_MOBILE</SI_OS_SCIENZA.USER>
+				<SI_OS_SCIENZA.PASSWORD>SzaMobileQ2017</SI_OS_SCIENZA.PASSWORD>
+				<SI_OS_SCIENZA.URL.REG_USUARIO>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.REG_USUARIO>
+				<SI_OS_SCIENZA.URL.IND_PEDIDOS>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.IND_PEDIDOS>
+				<SI_OS_SCIENZA.URL.PED_ENT>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.PED_ENT>
+				<SI_OS_SCIENZA.URL.PROP_COORDINACION>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.PROP_COORDINACION>
+				<SI_OS_SCIENZA.URL.CONF_COORDINACION>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.CONF_COORDINACION>
+				<SI_OS_SCIENZA.URL.TRAZA>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.TRAZA>
+				<SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>http://192.168.10.38:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>
+
+				<!-- *********************************************************** -->
+				<!-- 						EMAIL SENDER						 -->
+				<!-- *********************************************************** -->
+
+				<email.smtp>smtp.gmail.com</email.smtp>
+				<email.port>587</email.port>
+				<email.alias>SCIENZA URUGUAY</email.alias>
+				<email.username>scienzadevelopment33@gmail.com</email.username>
+				<email.password>123456a&amp;/</email.password>
+
+				<mail.environment>https://afiwebuy.scienza.com.ar/Scienza-uy/login</mail.environment>
+
+			</properties>
+		</profile>
+		<profile>
+			<id>production</id>
+			<properties>
+
+				<!-- *********************************************************** -->
+				<!-- 						SERVER 								 -->
+				<!-- *********************************************************** -->
+			    
+			    <server.protocol>http</server.protocol>
+			    <server.host>app.scienza.com.uy</server.host>
+			    <server.port>8100</server.port>
+			    <server.appId>C2676F7C-CD47-4EBF-80FF-8B7E38898B5E</server.appId>
+			    <server.web>https://app.scienza.com.uy</server.web>
+			    
+			    <googlemaps.apikey></googlemaps.apikey>
+			    
+			    <onesignal.authorization>NDEyMDZkOWMtMmNkMy00YTlhLTk5ODctZTVmYzM1ZGZhNTZj</onesignal.authorization>
+			    <onesignal.appId>f2b4d17b-ead2-4536-915c-2ad77a832a3c</onesignal.appId>
+			    
+			    <pubnub.publishKey>pub-c-effdd03d-7fc3-4c3f-93cb-e3a63c1e8309</pubnub.publishKey>
+			    <pubnub.subscribeKey>sub-c-09b33fe4-f755-11e9-b316-ee206fc45f5e</pubnub.subscribeKey>
+			    <pubnub.uuid>99999999-9999-9999-9999-999999999999</pubnub.uuid>
+			    
+				<!-- *********************************************************** -->
+				<!-- 					HIBERNATE.CFG.XML						 -->
+				<!-- *********************************************************** -->
+
+				<connection.driver_class>com.mysql.jdbc.Driver</connection.driver_class>
+				<connection.url>jdbc:mysql://srvdbscienzauy.cpnhk7ccqgsj.us-east-2.rds.amazonaws.com:3306/scienza_uy?noAccessToProcedureBodies=true&amp;charset=utf8mb4&amp;collation=utf8mb4_unicode_ci</connection.url>
+				<connection.username>admin</connection.username>
+				<connection.password>cFR2DrTpDD7mhwzwjh4tWvst</connection.password>
+				<connection.pool_size>500</connection.pool_size>
+				
+				<connection.hibernate_dialect>org.hibernate.dialect.MySQL5Dialect</connection.hibernate_dialect>
+				<connection.naming_strategy>org.hibernate.cfg.ImprovedNamingStrategy</connection.naming_strategy>
+
+				<connection.current_session_context_class>thread</connection.current_session_context_class>
+				<connection.cache.provider_class>org.hibernate.cache.NoCacheProvider</connection.cache.provider_class>
+				<connection.show_sql>false</connection.show_sql>
+				<connection.hbm2ddl.auto>validate</connection.hbm2ddl.auto>
+
+				<!-- *********************************************************** -->
+				<!-- 						PROPERTIES 							 -->
+				<!-- *********************************************************** -->
+
+				<location.files>/home/centos/scienza/files/</location.files>
+				<path.smallImage>images/small/</path.smallImage>
+				<path.mediumImage>images/medium/</path.mediumImage>
+				<path.originalImage>images/original/</path.originalImage>
+				<path.pdf>pdf/</path.pdf>				
+				<path.docs>docs/</path.docs>
+				<path.temporal>tmp/</path.temporal>
+				
+				<!-- *********************************************************** -->
+				<!-- 						   SAP 								 -->
+				<!-- *********************************************************** -->
+				
+				<SI_OS_SCIENZA.USER>SZA_MOBILEUY</SI_OS_SCIENZA.USER>
+				<SI_OS_SCIENZA.PASSWORD>SzaMobileP2019</SI_OS_SCIENZA.PASSWORD>
+				<SI_OS_SCIENZA.URL.REG_USUARIO>http://mdf-pop.scienza.com.ar:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.REG_USUARIO>
+				<SI_OS_SCIENZA.URL.IND_PEDIDOS>http://mdf-pop.scienza.com.ar:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.IND_PEDIDOS>
+				<SI_OS_SCIENZA.URL.PED_ENT>http://mdf-pop.scienza.com.ar:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.PED_ENT>
+				<SI_OS_SCIENZA.URL.PROP_COORDINACION>http://mdf-pop.scienza.com.ar:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.PROP_COORDINACION>
+				<SI_OS_SCIENZA.URL.CONF_COORDINACION>http://mdf-pop.scienza.com.ar:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.CONF_COORDINACION>
+				<SI_OS_SCIENZA.URL.TRAZA>http://mdf-pop.scienza.com.ar:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.TRAZA>
+				<SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>http://mdf-pop.scienza.com.ar:50000/XISOAPAdapter/MessageServlet</SI_OS_SCIENZA.URL.BUSQUEDA_DISPONE>
+
+                <!-- *********************************************************** -->
+                <!-- 						EMAIL SENDER						 -->
+                <!-- *********************************************************** -->
+
+                <email.smtp>smtp.gmail.com</email.smtp>
+                <email.port>587</email.port>
+                <email.alias>SCIENZA MOBILE</email.alias>
+                <email.username>scienzamovil@scienza.com.uy</email.username>
+                <email.password>scienzamoviluy</email.password>
+
+
+				<mail.environment>https://app.scienza.com.uy/Scienza-uy/login</mail.environment>
+				
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-web-services</artifactId>
+		</dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>	
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+			<version>8.0.13</version>
+		</dependency>
+		
+		<dependency>
+	        <groupId>jaxen</groupId>
+	        <artifactId>jaxen</artifactId>
+	        <scope>compile</scope>
+	        <exclusions>
+	            <exclusion>
+	                <artifactId>maven-cobertura-plugin</artifactId>
+	                <groupId>maven-plugins</groupId>
+	            </exclusion>
+	            <exclusion>
+	                <artifactId>maven-findbugs-plugin</artifactId>
+	                <groupId>maven-plugins</groupId>
+	            </exclusion>
+	            <exclusion>
+	                <artifactId>xalan</artifactId>
+	                <groupId>xalan</groupId>
+	            </exclusion>
+	            <exclusion>
+	                <artifactId>xercesImpl</artifactId>
+	                <groupId>xerces</groupId>
+	            </exclusion>
+	        </exclusions>
+	    </dependency>
+	
+	    <dependency>
+	        <groupId>xalan</groupId>
+	        <artifactId>xalan</artifactId>
+	        <version>2.7.0</version>
+	        <type>jar</type>
+	        <scope>compile</scope>
+	        <exclusions>
+	            <exclusion>
+	                <artifactId>xml-apis</artifactId>
+	                <groupId>xml-apis</groupId>
+	            </exclusion>
+	        </exclusions>
+	    </dependency>
+	    <dependency>
+	        <groupId>xerces</groupId>
+	        <artifactId>xercesImpl</artifactId>
+	        <version>2.9.1</version>
+	        <type>jar</type>
+	        <scope>compile</scope>
+	        <exclusions>
+	            <exclusion>
+	                <artifactId>xml-apis</artifactId>
+	                <groupId>xml-apis</groupId>
+	            </exclusion>
+	        </exclusions>
+	    </dependency>
+		
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>19.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>commons-httpclient</groupId>
+		    <artifactId>commons-httpclient</artifactId>
+		    <version>3.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>3.6</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>1.8.3</version>
+		</dependency>		
+		<dependency>
+		    <groupId>org.imgscalr</groupId>
+		    <artifactId>imgscalr-lib</artifactId>
+		    <version>4.2</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.pubnub</groupId>
+		  <artifactId>pubnub-gson</artifactId>
+		  <version>4.21.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.squareup.okio</groupId>
+		    <artifactId>okio</artifactId>
+		    <version>2.1.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>com.sun.mail</groupId>-->
+<!--			<artifactId>javax.mail</artifactId>-->
+<!--			<version>1.6.2</version>-->
+<!--		</dependency>-->
+
+
+		<dependency>
+			<groupId>org.passay</groupId>
+			<artifactId>passay</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>4.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.16</version>
+		</dependency>
+	</dependencies>
+</project>

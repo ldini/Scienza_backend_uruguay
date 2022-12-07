@@ -1,0 +1,76 @@
+<xsd:schema
+		elementFormDefault="qualified"
+		targetNamespace="http://www.scienza.com.uy/MB_BK_SCIENZA_NOTIF_SAP"
+		xmlns:tns="http://www.scienza.com.uy/MB_BK_SCIENZA_NOTIF_SAP"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+>
+	<xsd:element name="MT_SCIENZA_NOTIF_SAP" type="tns:DT_SCIENZA_NOTIF_SAP" />
+	<xsd:element name="MT_SCIENZA_NOTIF_SAP_Response" type="tns:DT_SCIENZA_NOTIF_SAP_Response" />
+
+	<xsd:complexType name="DT_SCIENZA_NOTIF_SAP">
+		<xsd:sequence>
+			<xsd:element name="PACIENTE_ID" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:long">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TITULO" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TEXTO" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TEXTO_NOTIFICACION_PUSH" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ACCION" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="MENSAJE"/>
+						<xsd:enumeration value="DETALLE_ENTREGA"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="DATO_CLAVE" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="VENCIMIENTO" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DT_SCIENZA_NOTIF_SAP_Response">
+		<xsd:sequence>
+			<xsd:element name="ESTADO" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="OK"/>
+						<xsd:enumeration value="NO_OK"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="MENSAJE" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

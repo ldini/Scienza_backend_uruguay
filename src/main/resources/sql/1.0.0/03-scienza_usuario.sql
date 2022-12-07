@@ -1,0 +1,2 @@
+INSERT INTO scienza.usuario (id, fecha_delete, fecha_insert, fecha_update, version, username, password, enabled, account_non_expired, credentials_non_expired, account_non_locked, rol_id) VALUES (1, null, '2018-10-16 11:11:28', null, 0, 'fusap', 'fusap1234', true, true, true, true, 1);
+INSERT INTO scienza.usuario (id, fecha_delete, fecha_insert, fecha_update, version, username, password, enabled, account_non_expired, credentials_non_expired, account_non_locked, rol_id) VALUES (2, null, '2018-10-16 11:11:28', null, 0, 'scienza', 'scienza', true, true, true, true, 1);

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SI_OS_SCIENZA_REG_USUARIO_UY" targetNamespace="urn:scienza.com.ar:Registro_Usuarios_UY"
+                  xmlns:p1="urn:scienza.com.ar:Registro_Usuarios_UY"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:documentation/>
+    <wsp:UsingPolicy wsdl:required="true"/>
+    <wsp:Policy wsu:Id="OP_SI_OS_SCIENZA_REG_USUARIO_UY"/>
+    <wsdl:types>
+        <xsd:schema targetNamespace="urn:scienza.com.ar:Registro_Usuarios_UY"
+                    xmlns="urn:scienza.com.ar:Registro_Usuarios_UY" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element name="MT_SCIENZA_REG_USUARIO_UY" type="DT_SCIENZA_REG_USUARIO_UY"/>
+            <xsd:element name="MT_SCIENZA_REG_USUARIO_UY_Response" type="DT_SCIENZA_REG_USUARIO_UY_Response"/>
+            <xsd:complexType name="DT_SCIENZA_REG_USUARIO_UY">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">3182df6ad2dc11e9ac48000000646c02</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="PACIENTE_ID" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">546df5f2e95c11e6cdb6b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_CI" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">546e300fe95c11e6cce5b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="REGISTRACION" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">2f8dad8fb43d11e9b34800ff78a961a2
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DT_SCIENZA_REG_USUARIO_UY_Response">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">596bc196d9f811e9b30a000000646c02</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="RESULTADO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dfda08e95d11e686dcb870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_NOMBRE" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dfda0ae95d11e6c4a3b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_APELLIDO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dfda0be95d11e6aa3eb870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_TIPO_DOC" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">979af6b6d2de11e9be8700ff78a961a2
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_NUM_DOC" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="PACIENTE_ID" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dfda09e95d11e696b6b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_SEXO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dff6e7e95d11e69419b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_IM_ID" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dfda0ee95d11e68226b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_IM_NOMBRE" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">59643649d9f811e9a88e00090faa0001
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_IM_NUMERO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dfda0fe95d11e69781b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_FECHA_NAC" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dff6e8e95d11e6a980b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_DOMICLIO_COMPLETO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">31f91de2d30411e9b96ce4b97a5d3a4d
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_CALLE" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">6d654531e96c11e684b7b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_NUMERO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">6d654532e96c11e696ecb870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_PISO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">6d654533e96c11e6c3dfb870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_APARTAMENTO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">6d654534e96c11e690a2b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_LOCALIDAD" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">6d654535e96c11e6c1b3b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_CP" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">6d654536e96c11e6802cb870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_DEPARTAMENTO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">6d654537e96c11e69444b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_TEL_PARTICULAR" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dff6e9e95d11e6894bb870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_TEL_CELULAR" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dff6ebe95d11e694c9b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_COMP_CELULAR" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dff6eae95d11e6911db870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_TEL_LABORAL" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dff6ece95d11e6c41cb870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PACIENTE_EMAIL" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">b0dff6ede95d11e6c946b870f431b418
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="MT_SCIENZA_REG_USUARIO_UY">
+        <wsdl:documentation/>
+        <wsdl:part name="MT_SCIENZA_REG_USUARIO_UY" element="p1:MT_SCIENZA_REG_USUARIO_UY"/>
+    </wsdl:message>
+    <wsdl:message name="MT_SCIENZA_REG_USUARIO_UY_Response">
+        <wsdl:documentation/>
+        <wsdl:part name="MT_SCIENZA_REG_USUARIO_UY_Response" element="p1:MT_SCIENZA_REG_USUARIO_UY_Response"/>
+    </wsdl:message>
+    <wsdl:portType name="SI_OS_SCIENZA_REG_USUARIO_UY">
+        <wsdl:documentation/>
+        <wsdl:operation name="SI_OS_SCIENZA_REG_USUARIO_UY">
+            <wsdl:documentation/>
+            <wsp:Policy>
+                <wsp:PolicyReference URI="#OP_SI_OS_SCIENZA_REG_USUARIO_UY"/>
+            </wsp:Policy>
+            <wsdl:input message="p1:MT_SCIENZA_REG_USUARIO_UY"/>
+            <wsdl:output message="p1:MT_SCIENZA_REG_USUARIO_UY_Response"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SI_OS_SCIENZA_REG_USUARIO_UYBinding" type="p1:SI_OS_SCIENZA_REG_USUARIO_UY">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"
+                      xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+        <wsdl:operation name="SI_OS_SCIENZA_REG_USUARIO_UY">
+            <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"
+                            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            <wsdl:input>
+                <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SI_OS_SCIENZA_REG_USUARIO_UYService">
+        <wsdl:port name="HTTP_Port" binding="p1:SI_OS_SCIENZA_REG_USUARIO_UYBinding">
+            <soap:address
+                    location="http://mdf-s24.scienza.com.ar:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_APP_Mobile&amp;receiverParty=&amp;receiverService=&amp;interface=SI_OS_SCIENZA_REG_USUARIO_UY&amp;interfaceNamespace=urn%3Ascienza.com.ar%3ARegistro_Usuarios_UY"
+                    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+        </wsdl:port>
+        <wsdl:port name="HTTPS_Port" binding="p1:SI_OS_SCIENZA_REG_USUARIO_UYBinding">
+            <soap:address
+                    location="https://mdf-s24.scienza.com.ar:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_APP_Mobile&amp;receiverParty=&amp;receiverService=&amp;interface=SI_OS_SCIENZA_REG_USUARIO_UY&amp;interfaceNamespace=urn%3Ascienza.com.ar%3ARegistro_Usuarios_UY"
+                    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

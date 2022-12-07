@@ -1,0 +1,2 @@
+insert into tipo_categoria (id, fecha_delete, fecha_insert, fecha_update, version, tipo_consulta_id, codigo, descripcion)
+values (6, null, '2020-11-02 15:50:19', null, 0, 1, 'CONPEA', 'Posible Evento Adverso');

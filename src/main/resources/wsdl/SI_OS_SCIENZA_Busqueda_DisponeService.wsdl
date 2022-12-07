@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SI_OS_SCIENZA_Busqueda_Dispone" targetNamespace="urn:scienza.com.ar:Busqueda_Dispone"
+                  xmlns:p1="urn:scienza.com.ar:Busqueda_Dispone"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:documentation/>
+    <wsp:UsingPolicy wsdl:required="true"/>
+    <wsp:Policy wsu:Id="OP_SI_OS_SCIENZA_Busqueda_Dispone"/>
+    <wsdl:types>
+        <xsd:schema targetNamespace="urn:scienza.com.ar:Busqueda_Dispone" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns="urn:scienza.com.ar:Busqueda_Dispone">
+            <xsd:element name="MT_SCIENZA_Busqueda_Dispone" type="DT_SCIENZA_Busqueda_Dispone"/>
+            <xsd:element name="MT_SCIENZA_Busqueda_Dispone_Response" type="DT_SCIENZA_Busqueda_Dispone_Response"/>
+            <xsd:complexType name="DT_SCIENZA_Busqueda_Dispone_Response">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">166c824f611c11e9c9880000006b801f</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="Dispones" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">709fcc84442511e99216005056bdd912
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Dispone" minOccurs="0" maxOccurs="unbounded">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">
+                                            709fb890442511e9b2da005056bdd912
+                                        </xsd:appinfo>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="ID_DISPONE" type="xsd:string" minOccurs="0">
+                                                <xsd:annotation>
+                                                    <xsd:appinfo source="http://sap.com/xi/TextID">
+                                                        709fb88a442511e9b668005056bdd912
+                                                    </xsd:appinfo>
+                                                </xsd:annotation>
+                                            </xsd:element>
+                                            <xsd:element name="DISPONE_PREFERIDO" type="xsd:string" minOccurs="0">
+                                                <xsd:annotation>
+                                                    <xsd:appinfo source="http://sap.com/xi/TextID">
+                                                        ac4338444bc911e9a0b2005056bdd912
+                                                    </xsd:appinfo>
+                                                </xsd:annotation>
+                                            </xsd:element>
+                                            <xsd:element name="NOMBRE" type="xsd:string" minOccurs="0">
+                                                <xsd:annotation>
+                                                    <xsd:appinfo source="http://sap.com/xi/TextID">
+                                                        709fb88b442511e990e2005056bdd912
+                                                    </xsd:appinfo>
+                                                </xsd:annotation>
+                                            </xsd:element>
+                                            <xsd:element name="DIRECCION" type="xsd:string" minOccurs="0">
+                                                <xsd:annotation>
+                                                    <xsd:appinfo source="http://sap.com/xi/TextID">
+                                                        709fb88c442511e99c0d005056bdd912
+                                                    </xsd:appinfo>
+                                                </xsd:annotation>
+                                            </xsd:element>
+                                            <xsd:element name="TEXTOS" minOccurs="0">
+                                                <xsd:annotation>
+                                                    <xsd:appinfo source="http://sap.com/xi/TextID">
+                                                        709fb88d442511e9890a005056bdd912
+                                                    </xsd:appinfo>
+                                                </xsd:annotation>
+                                                <xsd:complexType>
+                                                    <xsd:sequence>
+                                                        <xsd:element name="TEXTO" type="xsd:string" minOccurs="0"
+                                                                     maxOccurs="unbounded">
+                                                            <xsd:annotation>
+                                                                <xsd:appinfo source="http://sap.com/xi/TextID">
+                                                                    ac4338454bc911e9c941005056bdd912
+                                                                </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                        </xsd:element>
+                                                    </xsd:sequence>
+                                                </xsd:complexType>
+                                            </xsd:element>
+                                            <xsd:element name="LATITUD" type="xsd:decimal" minOccurs="0">
+                                                <xsd:annotation>
+                                                    <xsd:appinfo source="http://sap.com/xi/TextID">
+                                                        709fb88e442511e9ce18005056bdd912
+                                                    </xsd:appinfo>
+                                                </xsd:annotation>
+                                            </xsd:element>
+                                            <xsd:element name="LONGITUD" type="xsd:decimal" minOccurs="0">
+                                                <xsd:annotation>
+                                                    <xsd:appinfo source="http://sap.com/xi/TextID">
+                                                        709fb88f442511e996b7005056bdd912
+                                                    </xsd:appinfo>
+                                                </xsd:annotation>
+                                            </xsd:element>
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DT_SCIENZA_Busqueda_Dispone">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">55c7b585442511e9cf11000000646c02</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="ID_AFILIADO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">55206dee442511e9cbca005056bdd912
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="NUMERO_PEDIDO" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">55206def442511e98b7c005056bdd912
+                            </xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="MT_SCIENZA_Busqueda_Dispone">
+        <wsdl:documentation/>
+        <wsdl:part name="MT_SCIENZA_Busqueda_Dispone" element="p1:MT_SCIENZA_Busqueda_Dispone"/>
+    </wsdl:message>
+    <wsdl:message name="MT_SCIENZA_Busqueda_Dispone_Response">
+        <wsdl:documentation/>
+        <wsdl:part name="MT_SCIENZA_Busqueda_Dispone_Response" element="p1:MT_SCIENZA_Busqueda_Dispone_Response"/>
+    </wsdl:message>
+    <wsdl:portType name="SI_OS_SCIENZA_Busqueda_Dispone">
+        <wsdl:documentation/>
+        <wsdl:operation name="SI_OS_SCIENZA_Busqueda_Dispone">
+            <wsdl:documentation/>
+            <wsp:Policy>
+                <wsp:PolicyReference URI="#OP_SI_OS_SCIENZA_Busqueda_Dispone"/>
+            </wsp:Policy>
+            <wsdl:input message="p1:MT_SCIENZA_Busqueda_Dispone"/>
+            <wsdl:output message="p1:MT_SCIENZA_Busqueda_Dispone_Response"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SI_OS_SCIENZA_Busqueda_DisponeBinding" type="p1:SI_OS_SCIENZA_Busqueda_Dispone">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"
+                      xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+        <wsdl:operation name="SI_OS_SCIENZA_Busqueda_Dispone">
+            <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"
+                            xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            <wsdl:input>
+                <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SI_OS_SCIENZA_Busqueda_DisponeService">
+        <wsdl:port name="HTTP_Port" binding="p1:SI_OS_SCIENZA_Busqueda_DisponeBinding">
+            <soap:address
+                    location="http://mdf-s29q.scienza.com.ar:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_APP_Mobile&amp;receiverParty=&amp;receiverService=&amp;interface=SI_OS_SCIENZA_Busqueda_Dispone&amp;interfaceNamespace=urn%3Ascienza.com.ar%3ABusqueda_Dispone"
+                    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+        </wsdl:port>
+        <wsdl:port name="HTTPS_Port" binding="p1:SI_OS_SCIENZA_Busqueda_DisponeBinding">
+            <soap:address
+                    location="https://mdf-s29q.scienza.com.ar:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_APP_Mobile&amp;receiverParty=&amp;receiverService=&amp;interface=SI_OS_SCIENZA_Busqueda_Dispone&amp;interfaceNamespace=urn%3Ascienza.com.ar%3ABusqueda_Dispone"
+                    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

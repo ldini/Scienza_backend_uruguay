@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SI_OS_SCIENZA_IND_PEDIDOS_UY" targetNamespace="urn:scienza.com.ar:Indice_Pedidos_UY" xmlns:p1="urn:scienza.com.ar:Indice_Pedidos_UY" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:documentation />
+    <wsp:UsingPolicy wsdl:required="true" />
+    <wsp:Policy wsu:Id="OP_SI_OS_SCIENZA_IND_PEDIDOS_UY" />
+    <wsdl:types>
+        <xsd:schema targetNamespace="urn:scienza.com.ar:Indice_Pedidos_UY" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:scienza.com.ar:Indice_Pedidos_UY">
+            <xsd:element name="MT_SCIENZA_IND_PEDIDOS_UY" type="DT_SCIENZA_IND_PEDIDOS_UY" />
+            <xsd:element name="MT_SCIENZA_IND_PEDIDOS_UY_Response" type="DT_SCIENZA_IND_PEDIDOS_UY_Response" />
+            <xsd:complexType name="DT_SCIENZA_IND_PEDIDOS_UY">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">d48d3fa2d2df11e9aeeb000000646c02</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="PACIENTE_ID" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">c27ac36ddced11e6c49308002752fa67</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PEDIDO_DESDE" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">c27ac36edced11e6a6cf08002752fa67</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="ORDEN" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">c27ac36fdced11e6c0d608002752fa67</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PEDIDOS_CANTIDAD" type="xsd:string" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">c27ac370dced11e68a4908002752fa67</xsd:appinfo>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DT_SCIENZA_IND_PEDIDOS_UY_Response">
+                <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/VersionID">1d639a8bd2e011e98ab3000000646c02</xsd:appinfo>
+                </xsd:annotation>
+                <xsd:sequence>
+                    <xsd:element name="COLECCION_DE_PEDIDOS" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:annotation>
+                            <xsd:appinfo source="http://sap.com/xi/TextID">0f124cdbdcee11e687f608002752fa67</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="PEDIDO_NUMERO" type="xsd:string" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">0f124cdadcee11e6b38f08002752fa67</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                                <xsd:element name="PEDIDO_FECHA" type="xsd:string" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:appinfo source="http://sap.com/xi/TextID">1d044655d2e011e9bd2c00ff78a961a2</xsd:appinfo>
+                                    </xsd:annotation>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="MT_SCIENZA_IND_PEDIDOS_UY">
+        <wsdl:documentation />
+        <wsdl:part name="MT_SCIENZA_IND_PEDIDOS_UY" element="p1:MT_SCIENZA_IND_PEDIDOS_UY" />
+    </wsdl:message>
+    <wsdl:message name="MT_SCIENZA_IND_PEDIDOS_UY_Response">
+        <wsdl:documentation />
+        <wsdl:part name="MT_SCIENZA_IND_PEDIDOS_UY_Response" element="p1:MT_SCIENZA_IND_PEDIDOS_UY_Response" />
+    </wsdl:message>
+    <wsdl:portType name="SI_OS_SCIENZA_IND_PEDIDOS_UY">
+        <wsdl:documentation />
+        <wsdl:operation name="SI_OS_SCIENZA_IND_PEDIDOS_UY">
+            <wsdl:documentation />
+            <wsp:Policy>
+                <wsp:PolicyReference URI="#OP_SI_OS_SCIENZA_IND_PEDIDOS_UY" />
+            </wsp:Policy>
+            <wsdl:input message="p1:MT_SCIENZA_IND_PEDIDOS_UY" />
+            <wsdl:output message="p1:MT_SCIENZA_IND_PEDIDOS_UY_Response" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SI_OS_SCIENZA_IND_PEDIDOS_UYBinding" type="p1:SI_OS_SCIENZA_IND_PEDIDOS_UY">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+        <wsdl:operation name="SI_OS_SCIENZA_IND_PEDIDOS_UY">
+            <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+            <wsdl:input>
+                <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SI_OS_SCIENZA_IND_PEDIDOS_UYService">
+        <wsdl:port name="HTTP_Port" binding="p1:SI_OS_SCIENZA_IND_PEDIDOS_UYBinding">
+            <soap:address location="http://mdf-s24.scienza.com.ar:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_APP_Mobile&amp;receiverParty=&amp;receiverService=&amp;interface=SI_OS_SCIENZA_IND_PEDIDOS_UY&amp;interfaceNamespace=urn%3Ascienza.com.ar%3AIndice_Pedidos_UY" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+        </wsdl:port>
+        <wsdl:port name="HTTPS_Port" binding="p1:SI_OS_SCIENZA_IND_PEDIDOS_UYBinding">
+            <soap:address location="https://mdf-s24.scienza.com.ar:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_APP_Mobile&amp;receiverParty=&amp;receiverService=&amp;interface=SI_OS_SCIENZA_IND_PEDIDOS_UY&amp;interfaceNamespace=urn%3Ascienza.com.ar%3AIndice_Pedidos_UY" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

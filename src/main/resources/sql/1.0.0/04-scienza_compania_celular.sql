@@ -1,0 +1,4 @@
+INSERT INTO scienza.compania_celular (id, fecha_delete, fecha_insert, fecha_update, version, codigo, descripcion) VALUES (1, null, '2018-10-16 11:11:44', null, 0, 'MOV', 'Movistar');
+INSERT INTO scienza.compania_celular (id, fecha_delete, fecha_insert, fecha_update, version, codigo, descripcion) VALUES (2, null, '2018-10-16 11:11:44', null, 0, 'PER', 'Personal');
+INSERT INTO scienza.compania_celular (id, fecha_delete, fecha_insert, fecha_update, version, codigo, descripcion) VALUES (3, null, '2018-10-16 11:11:44', null, 0, 'CLA', 'Claro');
+INSERT INTO scienza.compania_celular (id, fecha_delete, fecha_insert, fecha_update, version, codigo, descripcion) VALUES (4, null, '2018-10-16 11:11:44', null, 0, 'NEX', 'Nextel');

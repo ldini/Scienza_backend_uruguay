@@ -1,0 +1,77 @@
+<xsd:schema 
+	elementFormDefault="qualified" 
+	targetNamespace="http://www.scienza.com.ar/MB_BK_SCIENZA_NOTIF_ENT" 
+	xmlns:tns="http://www.scienza.com.ar/MB_BK_SCIENZA_NOTIF_ENT"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+>
+	<xsd:element name="MT_SCIENZA_NOTIF_ENT" type="tns:DT_SCIENZA_NOTIF_ENT" />
+	<xsd:element name="MT_SCIENZA_NOTIF_ENT_Response" type="tns:DT_SCIENZA_NOTIF_ENT_Response" />
+	
+	<xsd:complexType name="DT_SCIENZA_NOTIF_ENT">
+		<xsd:sequence>
+			<xsd:element name="NRO_PEDIDO" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="NRO_ENTREGA" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="DIRECCION_ENTREGA" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="DISTRIBUIDOR" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TIPO_VEHICULO" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PATENTE" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>		
+			<xsd:element name="AFILIADO_ID" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int">
+						<xsd:minInclusive value="10000000"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="EVENTO_ID" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int">
+						<xsd:enumeration value="1"/> <!-- ENTREGA EN DISTRIBUCION -->
+   							<xsd:enumeration value="2"/> <!-- ENTREGA CERCA DE DESTINO -->
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DT_SCIENZA_NOTIF_ENT_Response">
+		<xsd:sequence>
+			<xsd:element name="RESULTADO" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="OK"/>
+   							<xsd:enumeration value="NO_OK"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
